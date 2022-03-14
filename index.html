@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Momentum</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
+    <h1 id="clock">00:00:00</h1>
     <!--submit을 위한 요소-->
     <!--hidden조건에 따라 출력 여부 결정-->
     <form id="login_form" class="hidden">
@@ -20,8 +21,13 @@
       />
       <button>Login</button>
     </form>
-    <h1 id="hello_User" class="hidden"></h1>
-
-    <script src="move.js"></script>
+    <h2 id="hello_User" class="hidden"></h2>
+    <div id="quotes">
+      <span></span>
+      <span></span>
+    </div>
+    <script src="/js/login.js"></script>
+    <script src="/js/clock.js"></script>
+    <script src="/js/quotes.js"></script>
   </body>
 </html>
