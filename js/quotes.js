@@ -55,5 +55,5 @@ const quotes = [
 //새로고침마다 랜덤으로 quotes출력
 const todayQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
-quote.innerText = todayQuote.quote;
-author.innerText = todayQuote.author;
+quote.innerText = `"${todayQuote.quote}"`;
+author.innerText = `.${todayQuote.author}`;

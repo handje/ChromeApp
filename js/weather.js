@@ -15,6 +15,7 @@ function success(geo) {
       city.innerText = data.weather[0].main;
     });
 }
+
 function error() {
   console.log("error");
 }
