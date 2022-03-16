@@ -5,6 +5,5 @@ const todayImage = image[Math.floor(Math.random() * image.length)]; //random ima
 //img tag 생성
 const background = document.createElement("img");
 background.src = `img/${todayImage}`;
-console.log(background);
 
 document.body.appendChild(background); //html에 img tag 추가
