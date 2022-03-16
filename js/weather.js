@@ -1,4 +1,4 @@
-const API = "";
+const API = ""; //개인 API KEY 사용
 
 //위치를 가져와서 정보 입력
 function success(geo) {
