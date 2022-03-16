@@ -1,4 +1,4 @@
-const API = "e90716bc636240787e2a5b172ebf6655";
+const API = "";
 
 //위치를 가져와서 정보 입력
 function success(geo) {
