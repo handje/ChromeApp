@@ -5,7 +5,7 @@ function success(geo) {
   console.log(geo);
   const lati = geo.coords.latitude;
   const longi = geo.coords.longitude;
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat={${lati}&lon={${longi}}&appid={${API}}`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lati}&lon=${longi}&appid=${API}`;
   fetch(url)
     .then((res) => res.json())
     .then((data) => {

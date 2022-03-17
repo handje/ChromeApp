@@ -1,8 +1,26 @@
+@import 'reset.css';
+
+:root{
+  --main-color:white;
+}
+
+@keyframes fadein {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
 .hidden {
   display: none;
 }
 button {
-  border-style: none;
+  border: solid 3px var(--main-color);
+  color: var(--main-color);
+  border-radius: 15%;
+  background: transparent;
 }
 img {
   position: absolute;
@@ -16,6 +34,12 @@ img {
   opacity: 95%;
 }
 
+input,
+textarea {
+  background: 0;
+  color: var(--main-color);
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -24,7 +48,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--main-color);
 }
 
 body #weather {
@@ -35,17 +59,33 @@ body #weather {
 
 body .mainContent {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+body .mainContent #clock{
+  margin:10px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 10vw;
+}
+body .mainContent #login{
+  margin:0px auto;
+  text-align: center;
+}
+body .mainContent #hello_User{
+  font-size: 5vw;
+  animation: fadein 3s;
+}
+
 body #quotes {
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   position: fixed;
   bottom: 10px;
 }
@@ -56,13 +96,13 @@ body #quotes span {
 
 body .mainContent input {
   border: 0;
-  background: white;
-  border-bottom: solid 3px white;
+  width: auto;
+  height: auto;
+  border-bottom: solid 3px var(--main-color);
 
-  opacity: 50%;
 }
 body .mainContent input::placeholder {
-  color: black;
+  color: var(--main-color);
 }
 
 body .mainContent #todoElement {
