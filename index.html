@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Momentum</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="src/css/style.css" />
   </head>
   <body>
     <!--weather-->
@@ -37,12 +37,14 @@
       <!--todo-->
       <div id="toDo" class="hidden">
         <h3>What is your main focus for today?</h3>
-        <form id="todolist">
+        <form id="todoForm">
           <input
             type="text"
-            id="todoElement"
+            id="todayTodo"
             required
           />
+        <ul id="todoList">
+        </ul>
       </div>
     </div>
 
@@ -52,10 +54,11 @@
       <span></span>
     </div>
 
-    <script src="/js/login.js"></script>
-    <script src="/js/clock.js"></script>
-    <script src="/js/quotes.js"></script>
-    <script src="/js/background.js"></script>
-    <script src="/js/weather.js"></script>
+    <script src="src/js/login.js"></script>
+    <script src="src/js/clock.js"></script>
+    <script src="src/js/quotes.js"></script>
+    <script src="src/js/background.js"></script>
+    <script src="src/js/weather.js"></script>
+    <script src="src/js/todo.js"></script>
   </body>
 </html>

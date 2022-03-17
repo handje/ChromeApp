@@ -63,6 +63,7 @@ body .mainContent {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 5px;
 }
 
 body .mainContent #clock{
@@ -77,8 +78,9 @@ body .mainContent #login{
   text-align: center;
 }
 body .mainContent #hello_User{
-  font-size: 5vw;
+  font-size: 4vw;
   animation: fadein 3s;
+  margin-bottom: 10px;
 }
 
 body #quotes {
@@ -105,6 +107,6 @@ body .mainContent input::placeholder {
   color: var(--main-color);
 }
 
-body .mainContent #todoElement {
+body .mainContent #todayTodo {
   width: 100%;
 }
