@@ -10,8 +10,11 @@
   <body>
     <!--weather-->
     <div id="weather">
-      <span></span>
-      <span></span>
+      <div id="firstWeather">
+        <i></i>
+        <span id="temp"></span>
+      </div>
+      <span id="city"></span>
     </div>
 
     <!--center content-->
@@ -38,13 +41,9 @@
       <div id="toDo" class="hidden">
         <h3>What is your main focus for today?</h3>
         <form id="todoForm">
-          <input
-            type="text"
-            id="todayTodo"
-            required
-          />
-        <ul id="todoList">
-        </ul>
+          <input type="text" id="todayTodo" required />
+        </form>
+        <ul id="todoList"></ul>
       </div>
     </div>
 
@@ -60,5 +59,9 @@
     <script src="src/js/background.js"></script>
     <script src="src/js/weather.js"></script>
     <script src="src/js/todo.js"></script>
+    <script
+      src="https://kit.fontawesome.com/8806e45ffb.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

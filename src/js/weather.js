@@ -1,4 +1,15 @@
-const API = ""; //개인 API KEY 사용
+const API = "e90716bc636240787e2a5b172ebf6655"; //개인 API KEY 사용
+const weatherIcon = {
+  "01": "fas fa-sun",
+  "02": "fas fa-cloud-sun",
+  "03": "fas fa-cloud",
+  "04": "fas fa-cloud-meatball",
+  "09": "fas fa-cloud-sun-rain",
+  10: "fas fa-cloud-showers-heavy",
+  11: "fas fa-poo-storm",
+  13: "far fa-snowflake",
+  50: "fas fa-smog",
+};
 
 //위치를 가져와서 정보 입력
 function success(geo) {
@@ -11,10 +22,15 @@ function success(geo) {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      const weather = document.querySelector("#weather span:first-child");
-      const city = document.querySelector("#weather span:last-child");
-      weather.innerText = data.name;
-      city.innerText = data.weather[0].main;
+      console.dir(data);
+      const weather = document.querySelector("#weather i");
+      weather.className = weatherIcon[data.weather[0].icon.substr(0, 2)];
+
+      const city = document.querySelector("#weather #city");
+      city.innerText = data.name;
+
+      const temp = document.querySelector("#weather #temp");
+      temp.innerText = `${(data.main.temp - 273).toFixed(2)}º`;
     });
 }
 
