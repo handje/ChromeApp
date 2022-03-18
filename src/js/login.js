@@ -26,6 +26,7 @@ function handleLogin(event) {
 function showUserName(name) {
   helloUser.innerText = `Hello ${name}!`;
   helloUser.classList.remove(HIDDEN);
+
 }
 
 //main
