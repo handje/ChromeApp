@@ -56,10 +56,7 @@ body #quotes span {
 
 body .mainContent input {
   border: 0;
-  background: white;
   border-bottom: solid 3px white;
-
-  opacity: 50%;
 }
 body .mainContent input::placeholder {
   color: black;
