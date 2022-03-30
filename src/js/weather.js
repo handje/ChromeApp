@@ -1,4 +1,4 @@
-const API = "e90716bc636240787e2a5b172ebf6655"; //개인 API KEY 사용
+const API = ""; //개인 API KEY 사용
 const weatherIcon = {
   "01": "fas fa-sun",
   "02": "fas fa-cloud-sun",

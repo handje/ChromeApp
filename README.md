@@ -19,3 +19,9 @@ demo: https://handje.github.io/ChromeApp/
 설정
 
 1. 로그인과 TodoList내용은 local storage에 저장됨
+
+------업데이트-----------
+
+1. css 변경
+2. 시계 변경
+3. 그림판 추가

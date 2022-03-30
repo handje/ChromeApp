@@ -4,53 +4,117 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Momentum</title>
+    <title>Board</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
     <link rel="stylesheet" href="src/css/style.css" />
   </head>
   <body>
-    <!--weather-->
-    <div id="weather">
-      <div id="firstWeather">
-        <i></i>
-        <span id="temp"></span>
+    <img id="background" src="src\img\back.png" alt="background" />
+    <div class="content">
+      <div class="left">
+        <div class="leftTop">
+          <!--weather-->
+          <div id="weather">
+            <div id="firstWeather">
+              <i></i>
+              <span id="temp"></span>
+            </div>
+            <span id="city"></span>
+          </div>
+          <div class="clock">
+            <!--clock-->
+            <img
+              src="https://dl.dropbox.com/s/f3b3lyanili7zl2/clock%20template-01.svg?raw=1"
+            />
+            <div class="hour hand" id="hour"></div>
+            <div class="minute hand" id="minute"></div>
+            <div class="seconds hand" id="seconds"></div>
+          </div>
+        </div>
+
+        <div id="quotes">
+          <span></span>
+          <span></span>
+        </div>
       </div>
-      <span id="city"></span>
-    </div>
 
-    <!--center content-->
-    <div class="mainContent">
-      <!--clock-->
-      <h1 id="clock">00:00:00</h1>
+      <!--center content-->
+      <div class="mainContent">
+        <h2 id="hello_User">WELCOME!</h2>
+        <div class="photo hidden"></div>
+        <div id="login">
+          <form id="login_form">
+            <img id="" src="src\img\blob-haikei.png" alt="background" />
+            <div class="userInfo">
+              <input
+                type="text"
+                id="userName"
+                maxlength="15"
+                placeholder="Please, Write your name!"
+                required
+              />
+              <button>Login</button>
+            </div>
+          </form>
+        </div>
 
-      <!--user-->
-      <div id="login">
-        <form id="login_form" class="hidden">
-          <input
-            type="text"
-            id="userName"
-            maxlength="15"
-            placeholder="Please, Write your name!"
-            required
-          />
-          <button>Login</button>
-        </form>
-        <h2 id="hello_User" class="hidden"></h2>
+        <!--todo-->
+        <div id="toDo">
+          <div class="form hidden">
+            <h3>What is your main focus for today?</h3>
+            <form id="todoForm">
+              <input type="text" id="todayTodo" required />
+              <button>Ok</button>
+            </form>
+          </div>
+
+          <div class="memo hidden">
+            <ul id="todoList"></ul>
+          </div>
+        </div>
       </div>
 
-      <!--todo-->
-      <div id="toDo" class="hidden">
-        <h3>What is your main focus for today?</h3>
-        <form id="todoForm">
-          <input type="text" id="todayTodo" required />
-        </form>
-        <ul id="todoList"></ul>
+      <div class="right">
+        <canvas id="jscanvas" class="canvas"></canvas>
+        <div class="controls" id="controls" draggable="false">
+          <div class="penSize">
+            <input
+              type="range"
+              id="size"
+              min="0.1"
+              max="5.0"
+              value="2.5"
+              step="0.1"
+            />
+          </div>
+          <div class="menu" id="jsmenu">
+            <button id="clear">CLEAR</button>
+            <button id="fill">Fill</button>
+            <button id="paint">PAINT</button>
+            <button id="save">SAVE</button>
+          </div>
+          <!--
+            black: #000000
+            white:	#FFFFFF
+            red:	#FF0000
+            orange:	#FFA500
+            yellow:	#FFFF00
+            green: #008000
+            blue:	#0000FF
+        -->
+          <div class="color" id="color">
+            <button class="colorJs" style="background-color: #000000"></button>
+            <button class="colorJs" style="background-color: #ffffff"></button>
+            <button class="colorJs" style="background-color: #ff0000"></button>
+          </div>
+          <div class="color">
+            <button class="colorJs" style="background-color: #ffa500"></button>
+            <button class="colorJs" style="background-color: #ffff00"></button>
+            <button class="colorJs" style="background-color: #008000"></button>
+            <button class="colorJs" style="background-color: #0000ff"></button>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <!--quotes-->
-    <div id="quotes">
-      <span></span>
-      <span></span>
     </div>
 
     <script src="src/js/login.js"></script>
@@ -59,6 +123,7 @@
     <script src="src/js/background.js"></script>
     <script src="src/js/weather.js"></script>
     <script src="src/js/todo.js"></script>
+    <script src="src/js/drawing.js"></script>
     <script
       src="https://kit.fontawesome.com/8806e45ffb.js"
       crossorigin="anonymous"

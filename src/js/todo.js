@@ -46,13 +46,18 @@ function handleToDo(event) {
   save();
 }
 //main
-if (localStorage.getItem("username")) {
-  todo.classList.remove("hidden");
-  todoForm.addEventListener("submit", handleToDo);
-}
+
+todoForm.addEventListener("submit", handleToDo);
 const item = localStorage.getItem(TODOKEY);
 if (item) {
   const parsedTodo = JSON.parse(item);
   storage = parsedTodo;
   parsedTodo.forEach(showTodoList);
+}
+
+const form = todo.querySelector(".form");
+const memo = todo.querySelector(".memo");
+if (localStorage.getItem("username")) {
+  form.classList.remove("hidden");
+  memo.classList.remove("hidden");
 }

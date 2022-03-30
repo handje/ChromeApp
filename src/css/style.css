@@ -1,15 +1,15 @@
-@import "reset.css";
-
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700&family=Hurricane&display=swap");
+@import "drawing.css";
 :root {
-  --main-color: white;
+  --main-color: lightblue;
 }
 
-@keyframes fadein {
+@keyframes fadeout {
   from {
-    opacity: 0;
+    opacity: 1;
   }
   to {
-    opacity: 1;
+    opacity: 10;
   }
 }
 
@@ -21,8 +21,11 @@ button {
   color: var(--main-color);
   border-radius: 15%;
   background: transparent;
+  margin: 0;
+  margin-left: 5px;
 }
-img {
+
+#background {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -37,108 +40,254 @@ img {
 input,
 textarea {
   background: 0;
-  color: var(--main-color);
+  margin: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+ul {
+  padding-left: 20px;
+}
+form {
+  border: none;
+}
+html {
+  height: 100%;
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--main-color);
-}
-
-body #weather {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  right: 10px;
-  top: 5px;
-}
-body #weather #firstWeather {
-  font-size: 30px;
-  margin-bottom: 5px;
-}
-
-body .mainContent {
+  height: 100%;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  margin-bottom: 5px;
+  align-items: center;
+  font-family: "Fira Sans", sans-serif;
 }
 
-body .mainContent #clock {
-  margin: 10px;
+#board {
+  position: absolute;
   width: 100%;
   height: 100%;
-  text-align: center;
-  font-size: 10vw;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: -1;
+  opacity: 95%;
 }
-body .mainContent #login {
-  margin: 0px auto;
-  text-align: center;
-}
-body .mainContent #hello_User {
-  font-size: 4vw;
-  animation: fadein 3s;
-  margin-bottom: 70px;
-}
-body .mainContent #toDo {
-  width: 40%;
-}
-body .mainContent #toDo h3 {
-  width: 100%;
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-body .mainContent #todayTodo {
-  width: 100%;
-  height: 50px;
-  margin-bottom: 15px;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: bold;
-}
-body .mainContent #toDo li {
+.content {
+  position: absolute;
+  height: 80%;
+  width: 90%;
+  background-color: white;
+  box-shadow: 10px 10px 10px var(--main-color);
+  border-radius: 5%;
   display: flex;
-  font-size: 1.5rem;
-  justify-content: center;
-  margin-bottom: 15px;
-}
-body .mainContent #toDo span {
-  font-weight: bold;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-body .mainContent #toDo button {
-  border: 0;
-}
-
-body #quotes {
-  width: 100%;
+/* left */
+.left {
+  flex: 1;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  position: fixed;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 30px;
+}
+
+.left .leftTop {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.left .clock {
+  height: 320px;
+  width: 320px;
+  background-color: var(--main-color);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 50%;
+  -webkit-box-shadow: 30px 30px 35px rgba(0, 0, 0, 0.25);
+  box-shadow: 30px 30px 35px rgba(0, 0, 0, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+.left img {
+  opacity: 0.6;
+}
+.left .hand {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 5px;
+  -webkit-transform-origin: bottom;
+  -ms-transform-origin: bottom;
+  transform-origin: bottom;
+}
+.left .hour {
+  height: 60px;
+  width: 10px;
+  top: 100px;
+}
+.left .minute {
+  height: 80px;
+  width: 5px;
+  top: 80px;
+}
+.left .seconds {
+  height: 90px;
+  width: 3px;
+  top: 70px;
+}
+.left #quotes {
+  font-family: "Hurricane", cursive;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: larger;
+}
+.left #quotes span:last-child {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* main */
+.mainContent {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin: 10px 0;
+}
+.mainContent h2 {
+  width: fit-content;
+  padding: 10px;
+  box-shadow: 5px 5px 10px var(--main-color);
+  background-color: var(--main-color);
+  border-radius: 10%;
+}
+.mainContent .photo {
+  width: 40vw;
+  height: 40%;
+}
+.mainContent .photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10%;
+  filter: drop-shadow(0 0 0.75rem var(--main-color));
+}
+.mainContent #toDo {
+  display: flex;
+  width: 40vw;
+  height: 400px;
+  overflow: hidden;
   bottom: 10px;
+  border: thick double var(--main-color);
+  box-shadow: 5px 5px 10px #cee4f6;
+  margin-top: 10px;
+}
+.mainContent .form {
+  width: fit-content;
+  text-align: center;
+  margin-left: 30px;
+}
+.mainContent .form h3 {
+  border-bottom: solid 1px black;
+  width: fit-content;
 }
 
-body #quotes span {
-  margin: 0 20px;
+.mainContent .form #todoForm {
+  display: flex;
+  box-shadow: none;
+  padding: 0;
 }
 
-body .mainContent input {
-  border: 0;
-  width: auto;
-  height: auto;
-  border-bottom: solid 3px var(--main-color);
+.mainContent #todoForm input {
+  border: none;
+  border-bottom: 3px solid black;
 }
-body .mainContent input::placeholder {
-  color: var(--main-color);
+.mainContent #todoForm button {
+  border: none;
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 50%;
+}
+.mainContent #todoForm button:hover {
+  filter: none;
+}
+.mainContent .memo {
+  width: 100%;
+  margin-right: 10px;
+  margin-left: 30px;
+}
+.mainContent .memo li {
+  font-weight: bold;
+  list-style: circle;
+}
+
+.mainContent .memo button {
+  border: none;
+  width: 10px;
+  padding: 0;
+}
+.mainContent #login_form {
+  width: 100%;
+  margin: 10px auto;
+  position: relative;
+}
+.mainContent #login_form img {
+  width: 100%;
+  vertical-align: middle;
+}
+.mainContent .userInfo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+}
+.mainContent .userInfo input {
+  border-radius: 9999em;
+  color: white;
+  border-bottom: 3px solid white;
+}
+.mainContent .userInfo input:focus {
+  outline: none;
+}
+.mainContent .userInfo input::placeholder {
+  color: white;
+}
+.mainContent .userInfo button {
+  margin-top: 30px;
+  margin-left: 50px;
+  text-align: center;
+  color: white;
+  border-color: white;
+  border-radius: 50%;
+}
+.mainContent .userInfo button:hover {
+  cursor: pointer;
+  background: #055e67;
+}
+.right {
+  flex: 1;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.right canvas {
+  width: 80%;
+  height: 400px;
+  margin-left: 10px;
+  border: thick double var(--main-color);
+  filter: drop-shadow(0 0 0.75rem var(--main-color));
 }
