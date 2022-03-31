@@ -5,19 +5,16 @@ const photo = document.querySelector(".mainContent .photo");
 let index = image.indexOf(todayImage);
 
 //img tag 생성
-const background = document.createElement("img");
+const background = photo.querySelector("img");
 background.src = `src/img/${todayImage}`;
-photo.appendChild(background); //html에 img tag 추가
 
-const div = document.createElement("div");
-div.className = "photoBtn";
+const div = photo.querySelector(".photoBtn");
 const prev = document.createElement("button");
 prev.innerText = "prev";
 const next = document.createElement("button");
 next.innerText = "next";
 div.appendChild(prev); //html에 img tag 추가
 div.appendChild(next); //html에 img tag 추가
-photo.appendChild(div);
 
 prev.addEventListener("click", () => {
   if (index - 1 >= 0) {
@@ -40,4 +37,8 @@ next.addEventListener("click", () => {
 
 if (localStorage.getItem("username")) {
   photo.classList.remove("hidden");
+}
+
+if (matchMedia("screen and (max-width: 412px)").matches) {
+  photo.remove();
 }

@@ -14,12 +14,26 @@
   }
 }
 
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
 .hidden {
   display: none;
   border: none;
   visibility: hidden;
 }
 button {
+  vertical-align: middle;
+  padding: 5px 20px;
   border: solid 3px var(--main-color);
   color: var(--main-color);
   border-radius: 15%;
@@ -168,8 +182,6 @@ body {
   flex: 2;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-
   margin: 10px 0;
 }
 .mainContent h2 {
@@ -182,21 +194,22 @@ body {
 .mainContent .photo {
   width: 40vw;
   height: 40%;
+  display: flex;
+  flex-direction: column;
 }
 .mainContent .photo img {
   width: 100%;
-  height: 100%;
+  height: 90%;
   border-radius: 10%;
+  margin: 0 auto;
   filter: drop-shadow(0 0 0.75rem var(--shadow-color));
-  z-index: -1;
 }
 .mainContent .photo .photoBtn {
   display: flex;
-  justify-content: space-between;
-  margin-top: -100px;
-  z-index: 5;
-  background-color: #055e67;
+  justify-content: center;
+  margin-top: 5px;
 }
+
 .mainContent #toDo {
   display: flex;
   flex-direction: column;
@@ -206,7 +219,7 @@ body {
   bottom: 10px;
   border: thick double var(--main-color);
   box-shadow: 5px 5px 10px var(--shadow-color);
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .mainContent #toDo h1 {
   text-align: center;
@@ -221,7 +234,6 @@ body {
 .mainContent .form {
   flex: 1;
   width: 50%;
-
   margin-left: 10px;
 }
 
@@ -323,4 +335,35 @@ body {
   margin-left: 10px;
   border: thick double var(--main-color);
   filter: drop-shadow(0 0 0.75rem var(--shadow-color));
+}
+
+@media screen and (max-width: 500px) {
+  .content {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mainContent {
+    width: 100%;
+  }
+  .mainContent h2 {
+    margin: 0;
+  }
+  .mainContent #toDo {
+    width: 97%;
+    height: 100%;
+    border: none;
+    margin: 0;
+    border: thick double var(--main-color);
+  }
+  .mainContent #toDo .todoContent {
+    flex-direction: column;
+  }
+  .mainContent .form {
+    flex: 0.5;
+  }
 }

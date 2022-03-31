@@ -133,3 +133,7 @@ if (SAVE) {
     }
   });
 }
+
+if (matchMedia("screen and (max-width: 412px)").matches) {
+  document.querySelector(".right").classList.add("hidden");
+}

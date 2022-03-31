@@ -57,3 +57,7 @@ const todayQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
 quote.innerText = `"${todayQuote.quote}"`;
 author.innerText = `.${todayQuote.author}`;
+
+if (matchMedia("screen and (max-width: 412px)").matches) {
+  document.getElementById("quotes").remove();
+}
