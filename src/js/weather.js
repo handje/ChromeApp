@@ -22,7 +22,6 @@ function success(geo) {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      console.dir(data);
       const weather = document.querySelector("#weather i");
       weather.className = weatherIcon[data.weather[0].icon.substr(0, 2)];
 

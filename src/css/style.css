@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700&family=Hurricane&display=swap");
 @import "drawing.css";
 :root {
-  --main-color: lightblue;
+  --main-color: #478ea5;
+  --shadow-color: lightblue;
 }
 
 @keyframes fadeout {
@@ -15,6 +16,8 @@
 
 .hidden {
   display: none;
+  border: none;
+  visibility: hidden;
 }
 button {
   border: solid 3px var(--main-color);
@@ -81,7 +84,7 @@ body {
   height: 80%;
   width: 90%;
   background-color: white;
-  box-shadow: 10px 10px 10px var(--main-color);
+  box-shadow: 10px 10px 10px var(--shadow-color);
   border-radius: 5%;
   display: flex;
   justify-content: space-between;
@@ -111,8 +114,8 @@ body {
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border-radius: 50%;
-  -webkit-box-shadow: 30px 30px 35px rgba(0, 0, 0, 0.25);
-  box-shadow: 30px 30px 35px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.25);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.25);
   border: 2px solid rgba(255, 255, 255, 0.1);
 }
 .left img {
@@ -172,7 +175,7 @@ body {
 .mainContent h2 {
   width: fit-content;
   padding: 10px;
-  box-shadow: 5px 5px 10px var(--main-color);
+  box-shadow: 5px 5px 10px var(--shadow-color);
   background-color: var(--main-color);
   border-radius: 10%;
 }
@@ -184,26 +187,42 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 10%;
-  filter: drop-shadow(0 0 0.75rem var(--main-color));
+  filter: drop-shadow(0 0 0.75rem var(--shadow-color));
+  z-index: -1;
+}
+.mainContent .photo .photoBtn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -100px;
+  z-index: 5;
+  background-color: #055e67;
 }
 .mainContent #toDo {
   display: flex;
+  flex-direction: column;
   width: 40vw;
-  height: 400px;
+  height: 35vh;
   overflow: hidden;
   bottom: 10px;
   border: thick double var(--main-color);
-  box-shadow: 5px 5px 10px #cee4f6;
+  box-shadow: 5px 5px 10px var(--shadow-color);
   margin-top: 10px;
 }
-.mainContent .form {
-  width: fit-content;
+.mainContent #toDo h1 {
   text-align: center;
-  margin-left: 30px;
+  background-color: var(--main-color);
+  margin-top: 0;
 }
-.mainContent .form h3 {
-  border-bottom: solid 1px black;
-  width: fit-content;
+.mainContent #toDo .todoContent {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.mainContent .form {
+  flex: 1;
+  width: 50%;
+
+  margin-left: 10px;
 }
 
 .mainContent .form #todoForm {
@@ -213,9 +232,16 @@ body {
 }
 
 .mainContent #todoForm input {
+  color: black;
   border: none;
-  border-bottom: 3px solid black;
+  border-bottom: 5px solid var(--main-color);
+  width: 60%;
 }
+
+.mainContent #todoForm input:focus {
+  outline: none;
+}
+
 .mainContent #todoForm button {
   border: none;
   background-color: var(--main-color);
@@ -226,6 +252,7 @@ body {
   filter: none;
 }
 .mainContent .memo {
+  flex: 2;
   width: 100%;
   margin-right: 10px;
   margin-left: 30px;
@@ -234,7 +261,13 @@ body {
   font-weight: bold;
   list-style: circle;
 }
-
+.mainContent .memo li:hover {
+  cursor: pointer;
+}
+.mainContent .memo .clicked {
+  text-decoration: line-through;
+  text-decoration-color: red;
+}
 .mainContent .memo button {
   border: none;
   width: 10px;
@@ -289,5 +322,5 @@ body {
   height: 400px;
   margin-left: 10px;
   border: thick double var(--main-color);
-  filter: drop-shadow(0 0 0.75rem var(--main-color));
+  filter: drop-shadow(0 0 0.75rem var(--shadow-color));
 }

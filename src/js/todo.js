@@ -13,8 +13,6 @@ function save() {
 
 function handleDelete(event) {
   const del = event.target.parentElement;
-  console.log(storage);
-  console.log(del.id);
   storage = storage.filter((e) => e.id !== parseInt(del.id));
   save();
   del.remove();
@@ -28,9 +26,11 @@ function showTodoList(todo) {
   const btn = document.createElement("button");
   btn.innerText = "❌";
   btn.addEventListener("click", handleDelete);
-
   li.appendChild(span);
   li.appendChild(btn);
+  li.addEventListener("click", (event) => {
+    event.target.classList.toggle("clicked");
+  });
   todoList.appendChild(li);
 }
 
@@ -55,9 +55,6 @@ if (item) {
   parsedTodo.forEach(showTodoList);
 }
 
-const form = todo.querySelector(".form");
-const memo = todo.querySelector(".memo");
 if (localStorage.getItem("username")) {
-  form.classList.remove("hidden");
-  memo.classList.remove("hidden");
+  todo.className = "";
 }

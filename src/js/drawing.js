@@ -17,7 +17,6 @@ const SAVE = document.getElementById("save");
 //initail
 const canvasWidth = document.getElementsByClassName("canvas")[0].offsetWidth;
 const canvasHeight = document.getElementsByClassName("canvas")[0].offsetHeight;
-console.log(canvasWidth, canvasHeight);
 canvas.width = canvasWidth;
 canvas.height = canvasHeight;
 

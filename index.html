@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
     <link rel="stylesheet" href="src/css/style.css" />
   </head>
-  <body>
+  <body ondragstart="return false">
     <img id="background" src="src\img\back.png" alt="background" />
     <div class="content">
       <div class="left">
@@ -51,6 +51,7 @@
                 id="userName"
                 maxlength="15"
                 placeholder="Please, Write your name!"
+                autocomplete="off"
                 required
               />
               <button>Login</button>
@@ -59,17 +60,25 @@
         </div>
 
         <!--todo-->
-        <div id="toDo">
-          <div class="form hidden">
-            <h3>What is your main focus for today?</h3>
-            <form id="todoForm">
-              <input type="text" id="todayTodo" required />
-              <button>Ok</button>
-            </form>
-          </div>
+        <div id="toDo" class="hidden">
+          <h1>TodoList</h1>
+          <div class="todoContent">
+            <div class="form">
+              <form id="todoForm">
+                <input
+                  type="text"
+                  id="todayTodo"
+                  required
+                  placeholder="Today's work"
+                  autocomplete="off"
+                />
+                <button>Ok</button>
+              </form>
+            </div>
 
-          <div class="memo hidden">
-            <ul id="todoList"></ul>
+            <div class="memo">
+              <ul id="todoList"></ul>
+            </div>
           </div>
         </div>
       </div>
