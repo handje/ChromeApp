@@ -337,7 +337,14 @@ body {
   filter: drop-shadow(0 0 0.75rem var(--shadow-color));
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
+  #quotes,
+  .right,
+  .photo {
+    all: unset;
+    display: none;
+    visibility: hidden;
+  }
   .content {
     width: 100%;
     height: 100%;
@@ -348,22 +355,28 @@ body {
     align-items: center;
   }
   .mainContent {
+    position: absolute;
     width: 100%;
+    height: 100%;
+    align-items: center;
   }
   .mainContent h2 {
+    position: absolute;
+    left: 0;
     margin: 0;
+    margin-left: 5px;
   }
   .mainContent #toDo {
-    width: 97%;
-    height: 100%;
-    border: none;
-    margin: 0;
-    border: thick double var(--main-color);
+    width: 90%;
+    height: 60%;
+    margin-bottom: 30px;
+    border: thick solid var(--main-color);
+    box-shadow: none;
   }
   .mainContent #toDo .todoContent {
     flex-direction: column;
   }
   .mainContent .form {
-    flex: 0.5;
+    flex: 0.1;
   }
 }

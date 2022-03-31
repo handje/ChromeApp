@@ -38,7 +38,3 @@ next.addEventListener("click", () => {
 if (localStorage.getItem("username")) {
   photo.classList.remove("hidden");
 }
-
-if (matchMedia("screen and (max-width: 412px)").matches) {
-  photo.remove();
-}
